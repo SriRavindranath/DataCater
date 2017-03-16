@@ -1,0 +1,35 @@
+
+<!DOCTYPE html>
+
+<html>
+<head>
+
+<link rel="stylesheet" href="/static/style1.css" type="text/css">
+
+</head>
+<body>
+
+<div class="wallet_ip">
+
+{% if error %}
+      <p class="error" style="color:blue;"><center><strong>Error:</strong> {{ error }}</center></p>
+{% endif %}</br>
+
+<center><form name = "myForm" action = "/option2" method = "POST">
+
+    {% if date %}
+	<input type="hidden" name="date" class="date" value="{{date}}"/><br/>
+    {% endif %}</br>
+    {% if date1 %}
+        <input type="hidden" name="date1" class="date1" value="{{date1}}"/><br/>
+    {% endif %}</br>
+
+    <label for="wallet_id_ip">wallet id: </label>
+    <input name="wallet_id" type="text" id="wallet_id1" size="1">
+    <input type="submit" value="submit" onclick="return validateForm()" class="wallet-btn btn-primary btn-large btn-block"></center><br/><br/>
+
+</form>
+</div>
+
+</body>
+</html>

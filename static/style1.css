@@ -1,0 +1,161 @@
+* {
+box-sizing: border-box;
+}
+ 
+*:focus {
+	outline: none;
+}
+body {
+font-family: Arial;
+background-color: #F0B27A;
+padding: 50px;
+}
+.error {
+color: red;
+}
+.login {
+margin: 20px auto;
+width: 300px;
+}
+.login-screen {
+background-color: #FFF;
+padding: 20px;
+border-radius: 5px;
+}
+ 
+.app-title {
+text-align: center;
+color: #777;
+}
+ 
+.login-form {
+text-align: center;
+}
+.control-group {
+margin-bottom: 10px;
+}
+ 
+input {
+text-align: center;
+background-color: #ECF0F1;
+border: 2px solid transparent;
+border-radius: 3px;
+font-size: 16px;
+font-weight: 200;
+padding: 10px 0;
+width: 250px;
+transition: border .5s;
+}
+
+.radio {
+width: 100px;
+}
+ 
+input:focus {
+border: 2px solid #F0B27A;
+box-shadow: none;
+}
+ 
+.btn {
+  border: 2px solid transparent;
+  background: #F0B27A;
+  color: #ffffff;
+  font-size: 16px;
+  line-height: 25px;
+  padding: 10px 0;
+  text-decoration: none;
+  text-shadow: none;
+  border-radius: 3px;
+  box-shadow: none;
+  transition: 0.25s;
+  display: block;
+  width: 250px;
+  margin: 0 auto;
+}
+ 
+.btn:hover {
+  background-color: #EB984E;
+}
+ 
+input[type=radio]{
+width: 100px;
+}
+
+input[type=checkbox] {
+width: 100px;
+}
+  font-size: 12px;
+  color: #444;
+  display: block;
+	margin-top: 12px;
+}
+
+#first, #date{
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+#wrapper {
+   /* border: 1px solid black;*/
+}
+#first {
+    /*border: 1px solid red;*/
+    float:left;
+    width:40%;
+}
+#date {
+   /* border: 1px solid green;*/
+    float:left;
+    width:60%;
+}
+
+.sbtn {
+  border: 2px solid transparent;
+  background: #F0B27A;
+  color: #ffffff;
+  font-size: 16px;
+  line-height: 25px;
+  padding: 10px 0;
+  text-decoration: none;
+  text-shadow: none;
+  border-radius: 3px;
+  box-shadow: none;
+  transition: 0.25s;
+  display: block;
+  width: 250px;
+ 
+}
+
+.sbtn:hover {
+  background-color: #EB984E;
+}
+
+.wallet-btn {
+  border: 2px solid transparent;
+  background: #F0B27A;
+  color: #ffffff;
+  font-size: 16px;
+  line-height: 25px;
+  padding: 7px 0;
+  text-decoration: none;
+  text-shadow: none;
+  border-radius: 3px;
+  box-shadow: none;
+  transition: 0.25s;
+  width: 150px;
+  margin-left: 10px;
+}
+
+.wallet-btn:hover {
+  background-color: #EB984E;
+}
+.wallet_ip{
+background-color: #FFF;
+padding: 20px;
+/*padding-top: 20px;
+padding-right: 10px;
+padding-bottom: 20px;
+padding-left: 20px;*/
+border-radius: 5px;
+}

@@ -1,0 +1,120 @@
+{% block head %}
+
+<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+<link rel="stylesheet" href="static/style1.css" type="text/css">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+
+   <script type="text/javascript"> 
+
+        function displayForm(c){ 
+
+            if(c.value == "1"){ 
+                        document.getElementById("date1").style.display='block'; 
+			document.getElementById("o_submit").style.display='none';
+        }
+	else if(c.value == "2"){
+			document.getElementById("date1").style.display='none'; 
+			document.getElementById("o_submit").style.display='block';
+        }		
+
+ else{
+
+            } 
+ 
+ }
+
+function validateForm(){
+
+  var z = document.forms["myForm"]["wallet_id"].value;
+
+  if(!/^[0-9]+$/.test(z)){
+    alert("Please only enter numeric characters only for wallet id! (Allowed input:0-9)")
+  }
+
+}
+
+</script>
+
+{% endblock %}
+
+{% block body %}
+  
+<div class="login-screen">
+  
+<div class="radio_btns" id="first">
+<label>Any other info????</label>
+<input value="1" type="radio" name="formselector" onclick="displayForm(this)"><label>Yes</label>
+<input value="2" type="radio" name="formselector" onclick="displayForm(this)"><label>No</label><br />
+{% if error %}
+        <p class="error" style="color:blue;"><center><strong>Error:</strong> {{ error }}</center></p>
+  {% endif %}</br>
+
+</div>
+
+	<form id = "form1" action = "/options" method = "POST">
+
+	<div class="form-wrapper" id="wrapper">
+		<!--<div class="radio_btns1" id="first1">
+			<label>Any other info????</label>
+			<input value="1" type="radio" name="formselector" onclick="displayForm(this)"><label>Yes</label>
+			<input value="2" type="radio" name="formselector" onclick="displayForm(this)"><label>No</label><br /><br />
+		</div>-->
+      		<div class="date1" id="date1" style="display:none">
+
+    			<div class="wallet_ip">
+
+			{% if error %}
+      			<p class="error" style="color:blue;"><center><strong>Error:</strong> {{ error }}</center></p>
+			{% endif %}</br>
+
+    			{% if date %}		
+        		<input type="hidden" name="date" form = "form1" class="date" value="{{date}}"/><br/>
+    			{% endif %}</br>
+    			{% if date1 %}
+        		<input type="hidden" name="date1" class="date1" form = "form1" value="{{date1}}"/><br/>
+    			{% endif %}</br>
+
+    			<label for="wallet_id_ip">wallet id:&emsp;&emsp;&emsp; </label>
+    			<input name="wallet_id" type="text" id="wallet_id1" size="1" form = "form1">
+
+			<input type="submit" value="submit" onclick="return validateForm()" class="wallet-btn btn-primary btn-large btn-block" form = "form1"></center><br/>
+
+	</form>
+    
+	<form id = "form2" action = "/option1" method = "POST">
+
+ 		{% if date %}
+        	<input type="hidden" name="date" form = "form2" class="date" value="{{date}}"/><br/>
+    		{% endif %}</br>
+    		{% if date1 %}
+       	 	<input type="hidden" name="date1" class="date1" form = "form2" value="{{date1}}"/><br/>
+    		{% endif %}</br>
+
+		<label> product name:&nbsp; </label>
+    		<input name="product" type="text" id="product_id1" size="1" form = "form2">
+
+    		<input type="submit" value="submit" name = "submit"  class="wallet-btn btn-primary btn-large btn-block" form = "form2"></center><br/><br/>
+
+	</form>
+	</div>
+	</div>
+	<div id="o_submit" style="display:none">
+		<form id = "form3" action = "/date" method = "POST">
+
+                {% if date %}
+                <input type="hidden" name="date" form = "form3" class="date" value="{{date}}"/><br/>
+                {% endif %}</br>
+                {% if date1 %}
+                <input type="hidden" name="date1" class="date1" form = "form3" value="{{date1}}"/><br/>
+                {% endif %}</br>                
+                <input type="submit" value="submit" name = "submit"  class="wallet-btn btn-primary btn-large btn-block" form = "form3">
+		<br/><br/></form>
+	</div>
+</div>
+</div>
+
+
+{% endblock %}
+
